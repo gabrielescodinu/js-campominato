@@ -3,13 +3,18 @@
 // con difficoltà 1 =>  tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
 var difficoltà = Number(prompt("scegli una difficolà: 0, 1, 2"));
+var maxNum;
+var possibilità;
 
 if (difficoltà == "0") {
-  var maxNum = 100;
+  maxNum = 100;
+  possibilità = 100 - 16;
 } else if (difficoltà == "1") {
-  var maxNum = 80;
+  maxNum = 80;
+  possibilità = 80 - 16;
 } else if (difficoltà == "2") {
-  var maxNum = 50;
+  maxNum = 50;
+  possibilità = 50 - 16;
 }
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
@@ -23,7 +28,6 @@ function getRandomNumber(min, max) {
 //Il punto esclamativo serve per mettere il contrario di quello che vorrei
 // viene utilizzata la funzione in Array al contrario con !, per pushare i numeri non inclusi nell'array.
 var numeriPC = [];
-var maxNum
 
 while (numeriPC.length !== 16) {
   var number = getRandomNumber(1, maxNum);
@@ -48,7 +52,6 @@ function inArray (array, number) {
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire
 // un numero alla volta, sempre compreso tra 1 e 100.
 var numeriUtente = [];
-var possibilità = 4;
 
 for (var i = 0; i <= possibilità; i++) {
   var numeroUtente = Number(prompt("Inserisci un numero tra 1 e 100"));
